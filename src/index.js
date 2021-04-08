@@ -1,11 +1,5 @@
-import { parsePath } from './vue/parsePath.js';
+import { fib1 } from './fibonacci';
 
-const getter = parsePath('a.b.c');
-
-const result = getter({
-  a: {
-    b: {
-      c: 111
-    }
-  }
-});
+for (let i = 1, l = 10; i <= l; i += 1) {
+  console.log(fib1(i));
+}
