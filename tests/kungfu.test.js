@@ -12,6 +12,7 @@ test("chunk", () => {
   ]);
 
   expect(_.chunk(["a", "b"], 1)).toStrictEqual([["a"], ["b"]]);
+  expect(_.chunk(["a", "b"])).toStrictEqual([["a"], ["b"]]);
 });
 
 test("range", () => {

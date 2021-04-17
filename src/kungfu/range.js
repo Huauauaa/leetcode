@@ -1,9 +1,9 @@
 /**
  *
- * @param {*} start
- * @param {*} end
- * @param {*} step
- * @returns
+ * @param [start=0] (number): The start of the range.
+ * @param end (number): The end of the range.
+ * @param [step=1] (number): The value to increment or decrement by.
+ * @returns (Array): Returns the range of numbers.
  */
 export default function range() {
   let start = 0;
