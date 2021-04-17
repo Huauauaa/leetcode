@@ -1,4 +1,4 @@
-import _ from "../src/kungfu";
+import _ from "../src/ludash";
 
 test("chunk", () => {
   expect(_.chunk(["a", "b", "c", "d"], 2)).toStrictEqual([

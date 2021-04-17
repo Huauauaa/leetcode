@@ -1,3 +1,3 @@
-import _ from "./kungfu";
+import _ from "./ludash";
 
 console.log(_.range(1, 4, 0));
