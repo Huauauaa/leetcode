@@ -1,3 +1,3 @@
-import k from "./kungfu";
+import _ from "./kungfu";
 
-console.log(k);
+console.log(_.range(1, 4, 0));
