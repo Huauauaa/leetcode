@@ -1,13 +1,24 @@
-import demo, { getData } from "./demo/interval";
+const fs = require("fs");
+const path = require("path");
 
-demo();
-// getData();
+fs.readFile(__dirname + "/sort.js", (err, data) => {
+  console.log(err, data.toString());
+});
 
-let count = 0;
-const id = setInterval(() => {
-  console.log(Date.now());
-  count++;
-  if (count === 10) {
-    clearInterval(id);
+const p = new Promise(function (resolve, reject) {
+  fs.readFile(__dirname + "/sort.js", (err, data) => {
+    if (err) {
+      reject(err);
+    }
+    resolve(data);
+  });
+});
+
+p.then(
+  function (value) {
+    console.log(value.toString());
+  },
+  function (err) {
+    console.error(err);
   }
-}, 1e3);
+);
