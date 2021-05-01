@@ -1,24 +1,15 @@
-const fs = require("fs");
-const path = require("path");
+import p from "./demo/request";
 
-fs.readFile(__dirname + "/sort.js", (err, data) => {
-  console.log(err, data.toString());
-});
+// p.then(
+//   (data) => {
+//     console.log(data);
+//   },
+//   (err) => {
+//     console.error(err);
+//   }
+// );
 
-const p = new Promise(function (resolve, reject) {
-  fs.readFile(__dirname + "/sort.js", (err, data) => {
-    if (err) {
-      reject(err);
-    }
-    resolve(data);
-  });
-});
-
-p.then(
-  function (value) {
-    console.log(value.toString());
-  },
-  function (err) {
-    console.error(err);
-  }
-);
+(async () => {
+  const result = await p;
+  console.log(result);
+})();
