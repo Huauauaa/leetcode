@@ -1,15 +1,30 @@
-import p from "./demo/request";
+const p = new Promise((resolve, reject) => {
+  console.log(11);
+  setTimeout(() => {
+    // resolve(222);
+    // throw "22";
+    reject(222);
+  }, 1e3);
 
-// p.then(
-//   (data) => {
-//     console.log(data);
-//   },
-//   (err) => {
-//     console.error(err);
-//   }
-// );
+  console.log(333);
+});
 
-(async () => {
-  const result = await p;
-  console.log(result);
-})();
+p.then(
+  (value) => {
+    console.log(value);
+  },
+  (reason) => {
+    console.warn(reason);
+  }
+).catch((err) => {
+  console.error(err);
+});
+
+p.then(
+  (value) => {
+    console.log(`%c${value}`, "color: red;");
+  },
+  (reason) => {
+    console.error(`%c${reason}`, "color: red");
+  }
+);
