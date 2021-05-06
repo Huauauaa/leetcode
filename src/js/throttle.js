@@ -1,3 +1,16 @@
+export const throttle1 = (fn, wait) => {
+  let timer = null;
+
+  return (...args) => {
+    if (!timer) {
+      timer = setTimeout(() => {
+        timer = null;
+        fn(...args);
+      }, wait);
+    }
+  };
+};
+
 export default function throttle0(fn, wait) {
   let timer = null;
   return function () {
@@ -12,7 +25,19 @@ export default function throttle0(fn, wait) {
   };
 }
 
-export default function throttle(fn, wait) {
+export const throttle2 = (fn, wait) => {
+  let prev = 0;
+
+  return (...args) => {
+    let now = Date.now();
+    if (now - prev > wait) {
+      fn(...args);
+      prev = now;
+    }
+  };
+};
+
+export function throttle(fn, wait) {
   let prev = 0;
   return function () {
     const context = this;
