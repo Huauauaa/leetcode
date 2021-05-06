@@ -1,30 +1,20 @@
-const p = new Promise((resolve, reject) => {
-  console.log(11);
-  setTimeout(() => {
-    // resolve(222);
-    // throw "22";
-    reject(222);
-  }, 1e3);
+import debounce, { debounce2, debounce3 } from "./js/debounce";
 
-  console.log(333);
-});
+const button = document.createElement("button");
 
-p.then(
-  (value) => {
-    console.log(value);
-  },
-  (reason) => {
-    console.warn(reason);
-  }
-).catch((err) => {
-  console.error(err);
-});
+button.innerText = "点击";
 
-p.then(
-  (value) => {
-    console.log(`%c${value}`, "color: red;");
-  },
-  (reason) => {
-    console.error(`%c${reason}`, "color: red");
-  }
-);
+let a = 0;
+
+const onClick = (event) => {
+  a++;
+  console.log(a, event, 3);
+};
+
+const debounceClick = debounce3(onClick, 300);
+// const debounceClick = debounce(onClick, 1000);
+// const debounceClick = debounce2(onClick, 1000);
+
+button.addEventListener("click", debounceClick);
+
+document.body.appendChild(button);
