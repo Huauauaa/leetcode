@@ -11,3 +11,16 @@
 
 // sum(1)(2)(3) // 6
 // sum(1, 2, 3) // 6
+
+export const sum = (...x) => {
+  let result = x.reduce((a, b) => a + b);
+  const add = (...y) => {
+    if (y.length === 0) {
+      return result;
+    }
+    result += y.reduce((a, b) => a + b);
+    return add;
+  };
+
+  return add;
+};
