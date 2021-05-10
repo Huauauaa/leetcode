@@ -1,5 +1,7 @@
-import { flatten } from "./tencent/flatten";
+import Promise, { Demo } from "./mine/Promise";
 
-const res = flatten([1, [2, [3, 4], 5], 6]);
+const p = new Promise((resolve, reject) => {
+  reject(1);
+});
 
-console.log(res);
+console.log(p);
