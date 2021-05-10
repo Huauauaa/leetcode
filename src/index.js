@@ -1,7 +1,9 @@
-import Promise, { Demo } from "./mine/Promise";
+import { of } from "./mine/instanceof";
 
-const p = new Promise((resolve, reject) => {
-  reject(1);
-});
+console.log(of([], Object));
 
-console.log(p);
+class Entity {}
+
+const e = new Entity();
+
+console.log(of(e, Entity));
