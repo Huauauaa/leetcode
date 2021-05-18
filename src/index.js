@@ -1,3 +1,3 @@
-import mm from "./demo/micro-macro";
+import st from "./demo/setTimeout";
 
-mm();
+st();
