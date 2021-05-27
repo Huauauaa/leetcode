@@ -1,3 +1,3 @@
-import st from "./demo/setTimeout";
+import demo from "./demo/requestAnimationFrame";
 
-st();
+demo();
