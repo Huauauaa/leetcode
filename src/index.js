@@ -1,5 +1,9 @@
-import nine from "./math/nine-nine";
+import example from "./math/prime-in";
 
-const result = nine();
+console.time("prime");
+
+const result = example(1000);
+
+console.timeEnd("prime");
 
 console.log(result);
