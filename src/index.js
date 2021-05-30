@@ -1,8 +1,5 @@
-let b = false;
+import nine from "./math/nine-nine";
 
-console.log((b = true));
+const result = nine();
 
-console.log(b);
-
-console.log((b = false));
-console.log(b);
+console.log(result);
