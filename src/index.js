@@ -1,5 +1,5 @@
-import example, { getNum } from "./math/yang";
+import example from "./letcode/random-array";
 
-example();
+const result = example(6, 0, 30);
 
-// console.log(getNum(5, 3));
+console.log(result);
