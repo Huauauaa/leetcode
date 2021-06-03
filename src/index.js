@@ -1,5 +1,5 @@
-import example from "./letcode/two-sum";
-import s from "./letcode/3sum";
+import example, { getNum } from "./math/yang";
 
-// console.log(example([2, 7, 11, 15], 9));
-console.log(s([-1, 0, 1, 2, -1, -4]));
+example();
+
+// console.log(getNum(5, 3));
