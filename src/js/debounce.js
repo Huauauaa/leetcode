@@ -83,3 +83,18 @@ export default function debounce(fn, wait) {
     }
   };
 }
+
+/*
+import { debounce2, debounce0, debounce3 } from "./js/debounce";
+
+const input = document.createElement("input");
+
+document.body.appendChild(input);
+
+input.addEventListener(
+  "input",
+  debounce3((e) => {
+    console.log(e.target.value);
+  }, 1e3)
+);
+*/
