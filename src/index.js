@@ -1,5 +1,3 @@
-import example from "./letcode/random-array";
+import example from "./util/arr";
 
-const result = example(6, 0, 30);
-
-console.log(result);
+example();
