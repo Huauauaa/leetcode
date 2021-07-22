@@ -1,3 +1,3 @@
-import example from "./util/arr";
+const example = require("./input/readline");
 
 example();
