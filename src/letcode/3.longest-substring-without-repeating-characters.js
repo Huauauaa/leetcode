@@ -25,33 +25,53 @@
 */
 
 /**
+ * 滑动窗口
  * @param {string} s
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  if (!s) return 0;
-  const arr = [];
-  const results = [];
-  for (let i = 0; i < s.length; i++) {
-    const item = s[i];
-    const index = arr.findIndex((i) => i === item);
-    if (index !== -1) {
-      arr.splice(0, index + 1);
+  let win = [];
+  const map = new Map();
+  let maxLen = 0;
+  for (let i = 0, l = s.length; i < l; i += 1) {
+    const ch = s[i];
+
+    if (map.has(ch) && win.includes(ch)) {
+      win = s.slice(map.get(ch) + 1, i).split("");
     }
-    arr.push(item);
-    results.push(arr.join(""));
+    map.set(ch, i);
+    win.push(ch);
+
+    if (win.length > maxLen) {
+      maxLen = win.length;
+    }
   }
-  return Math.max(...results.map((item) => item.length));
+
+  return maxLen;
 };
 
 console.log(lengthOfLongestSubstring("abcabcbb") === 3);
+//abcabcbb
+//---
+//   -
+//    -
+//     -
+//      _
 console.log(lengthOfLongestSubstring("bbbbb") === 1);
+//bbbbb
+//-
+// -
+//  -
+//   -
+//    -
 console.log(lengthOfLongestSubstring("pwwkew") === 3);
-// a
-// ab
-// abc
-// abca bca
-// bcab cab
-// cabc abc
-// abcb cb
-// cbb b
+//pwwkew
+//--
+//  ---
+//     -
+console.log(lengthOfLongestSubstring("dvdf") === 3);
+//dvdf
+//__
+// ___
+
+console.log(lengthOfLongestSubstring("tmmzuxt") === 5);
