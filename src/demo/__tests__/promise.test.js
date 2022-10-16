@@ -22,6 +22,6 @@ test("test error", async () => {
 
     expect(res).toBe("success");
   } catch (error) {
-    console.error(`The error is [${error}]`);
+    console.log(`The error is [${error}]`);
   }
 });
